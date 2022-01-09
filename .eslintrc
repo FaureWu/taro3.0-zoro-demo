@@ -1,0 +1,11 @@
+{
+  "extends": ["taro/react", "plugin:prettier/recommended", "plugin:react-hooks/recommended"],
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off"
+  },
+  "globals": {
+    "CONFIG": true
+  }
+}

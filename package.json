@@ -1,0 +1,81 @@
+{
+  "name": "taroz",
+  "version": "1.0.0",
+  "description": "taro3 combine zoro development tool",
+  "keywords": [
+    "taro",
+    "zoro",
+    "redux",
+    "alioss",
+    "weapp"
+  ],
+  "templateInfo": {
+    "name": "default",
+    "typescript": false,
+    "css": "sass"
+  },
+  "scripts": {
+    "build:weapp": "cross-env BUILD_ENV=prod taro build --type weapp",
+    "build:weapp-dev": "cross-env BUILD_ENV=dev taro build --type weapp",
+    "build:h5": "cross-env BUILD_ENV=prod taro build --type h5",
+    "build:h5-dev": "cross-env BUILD_ENV=dev taro build --type h5",
+    "dev:weapp": "cross-env BUILD_ENV=dev taro build --type weapp --watch",
+    "mock:weapp": "concurrently \"npm run server\" \"cross-env MOCK=weapp BUILD_ENV=dev taro build --type weapp --watch\"",
+    "dev:h5": "cross-env BUILD_ENV=dev taro build --type h5 --watch",
+    "mock:h5": "cross-env MOCK=h5 BUILD_ENV=dev taro build --type h5 --watch",
+    "server": "node-dev ./server/bin/www",
+    "lint": "eslint ./src",
+    "validate": "npm ls"
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "author": "",
+  "dependencies": {
+    "@babel/runtime": "^7.7.7",
+    "@opcjs/zoro": "^3.0.4",
+    "@opcjs/zoro-plugin": "^3.0.0",
+    "@tarojs/components": "3.1.4",
+    "@tarojs/react": "3.1.4",
+    "@tarojs/runtime": "3.1.4",
+    "@tarojs/taro": "3.1.4",
+    "beautiful-react-hooks": "^0.31.1",
+    "classnames": "^2.2.6",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "react-redux": "^7.2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@tarojs/cli": "^3.1.4",
+    "@tarojs/mini-runner": "3.1.4",
+    "@tarojs/webpack-runner": "3.1.4",
+    "@types/react": "^17.0.2",
+    "@types/webpack-env": "^1.13.6",
+    "alioss-upload-loader": "^1.0.2",
+    "babel-preset-taro": "3.1.4",
+    "concurrently": "^6.0.0",
+    "cookie-parser": "^1.4.5",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-taro": "3.1.4",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "express": "^4.17.1",
+    "faker": "^5.4.0",
+    "morgan": "^1.10.0",
+    "node-dev": "^6.4.0",
+    "precommit-hook": "^3.0.0",
+    "prettier": "^2.2.1",
+    "stylelint": "9.3.0",
+    "webpack-merge": "^5.7.3"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
